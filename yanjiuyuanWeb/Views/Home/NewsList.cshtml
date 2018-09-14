@@ -7,8 +7,8 @@
     <img src="../Content/images/web/zy_banner04.jpg">
     <div class="zy_title">
         <div>
-            <h1>关于我们</h1>
-            <span>company profile</span>
+            <h1>新闻资讯</h1>
+            <span>NEWS CENTER</span>
         </div>
     </div>
 </div>
@@ -20,7 +20,7 @@
             <div class="weizhi">
                 <div>
                     <p>
-                        <img src="../Content/images/web/PIN2.png">当前位置：<a href="index">首页</a> ><span>关于我们</span>
+                        <img src="../Content/images/web/PIN2.png">当前位置：<a href="index">首页</a> ><span>新闻资讯</span>
                     </p>
                 </div>
                 <i></i>
@@ -45,7 +45,7 @@
 
         </div>
         <div class="zy_conbox zy_news">
-            <template v-show="urlParam.index == 1" id="content1">
+            <template>
                 <ul>
                     <li>
                         <img src="images/pic03.jpg">
@@ -81,17 +81,16 @@
                         </span>
                     </li>
                 </ul>
-                <div class="fanye">
-                    <a href="#">首 页</a>
-                    <a href="#">上一页</a>
-                    <span>
-                        <a href="#" class="current">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                    </span>
-                    <a href="#">下一页</a>
-                    <a href="#">尾 页</a>
+                <!--底部翻頁-->
+                <div style="text-align:right">
+                    <el-pagination v-on:size-change="handleSizeChange"
+                                   v-on:current-change="handleCurrentChange"
+                                   :current-page="currentPage"
+                                   :page-sizes="[1, 3, 5, 10]"
+                                   :page-size="5"
+                                   layout="total, sizes, prev, pager, next, jumper"
+                                   :total="totalRows">
+                    </el-pagination>
                 </div>
             </template>
             
@@ -107,11 +106,19 @@
         mixins: [mixin],
         data: function () {
             return {
-
+                currentPage: 1,
+                totalRows: 0,
+                pageSize: 6,
             }
         },
         methods: {
-
+            changeIndex(index) {
+                this.urlParam.index = index
+                for (var i = 0; i < indexLength; i++) {
+                    $("#index" + i).removeClass("cur")
+                }
+                $("#index" + index).addClass("cur")
+            }
         },
         created: function () {
             this.indexLength = 4
