@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 泉州华中科技大学智能制造研究院</title>
+    <meta name="keywords" content="泉州华中科技大学智能制造研究院" />
+    <meta name="description" content="泉州华中科技大学智能制造研究院" />
+    <meta name="author" content="泉州华中科技大学智能制造研究院" />
+    <meta name="copyright" content="泉州华中科技大学智能制造研究院" />
+
+    <link rel="stylesheet" href="~/Content/element.css" />
+    <link rel="stylesheet" href="~/Content/index.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/children.css" type="text/css">
+    <script src="~/Scripts/jquery-1.11.0.min.js"></script>
+    <script src="~/Scripts/jquery.SuperSlide.2.1.1.js"></script>
+
+
+
+    <script src="~/Scripts/public.js"></script>
+    <script src="~/Scripts/sHover.min.js"></script>
+    <script src="~/Scripts/vue.js"></script>
+    <script src="~/Scripts/element.js"></script>
+    <script src="~/Scripts/config.js"></script>
+    <script src="~/Scripts/lib.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <!--头部-->
+        <div class="top_bg" id="top_bg">
+            <div class="top_line">
+                <p>
+                    <span>您好，欢迎访问泉州华中科技大学智能制造研究院。</span>
+                    <a><img src="~/Content/images/top_tel.png">咨询热线：010-88888888</a>
+                </p>
+            </div>
+            <div class="top_main">
+                <div class="top_logo">
+                    <a href='./'><img src="~/Content/images/logo.png"></a>
+                </div>
+                <!-- 导航 -->
+                <div class="dh_bg">
+                    <ul>
+                        <li class="cur">
+                            <a href="index">
+                                <i class="img dh_01HOME"></i>
+                                <span>网站首页</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Home/about">
+                                <i class="img dh_02COMPASS"></i>
+                                <span>关于我们</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Home/newslist">
+                                <i class="img dh_05NOTEPAD"></i>
+                                <span>新闻资讯</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="caselist.html">
+                                <i class="img dh_04GRID"></i>
+                                <span>案例展示</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="message.html">
+                                <i class="img dh_06PEN"></i>
+                                <span>在线留言</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html">
+                                <i class="img dh_07USER"></i>
+                                <span>联系我们</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- 背景块 -->
+                    <div class="dh_bg_cur">
+                        <img src="~/Content/images/nav_cur.png">
+                    </div>
+
+                    <!-- 二级菜单 -->
+                    <div class="two_nav_box">
+                        <div class="two_nav">
+                            <span></span>
+                            <div>
+                                <dl>
+                                    <i></i>
+                                    <dt><a href="/Home/about?index=1">公司简介</a></dt>
+                                </dl>
+
+                                <dl>
+                                    <i></i>
+                                    <dt><a href="/Home/about?index=2">发展历程</a></dt>
+                                </dl>
+                                @*<dl>
+                                    <i></i>
+                                    <dt><a href="#">企业文化</a></dt>
+                                </dl>*@
+                            </div>
+                        </div>
+                        <div class="two_nav">
+                            <span></span>
+                            <div>
+                                <dl>
+                                    <i></i>
+                                    <dt><a href="/Home/newslist?index=1">图片新闻</a></dt>
+                                </dl>
+                                <dl>
+                                    <i></i>
+                                    <dt><a href="/Home/newslist?index=2">研究院新闻</a></dt>
+                                </dl>
+                                <dl>
+                                    <i></i>
+                                    <dt><a href="/Home/newslist?index=3">行业资讯</a></dt>
+                                </dl>
+                                <dl>
+                                    <i></i>
+                                    <dt><a href="/Home/newslist?index=4">技术百科</a></dt>
+                                </dl>
+                                <dl>
+                                    <i></i>
+                                    <dt><a href="/Home/newslist?index=5">通知公告</a></dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="two_nav">
+                            <span></span>
+                            <div>
+                                <dl>
+                                    <i></i>
+                                    <dt><a href="productslist.html">微型医疗器械</a></dt>
+                                    <dd><a href="#">空心纤维透析器</a></dd>
+                                    <dd><a href="#">脉搏波血压计</a></dd>
+                                    <dd><a href="#">三高测量仪</a></dd>
+                                </dl>
+                                <dl>
+                                    <i></i>
+                                    <dt><a href="#">家用医疗器械</a></dt>
+                                    <dd><a href="#">家用制氧机</a></dd>
+                                    <dd><a href="#">脉搏波血压计</a></dd>
+                                </dl>
+                                <dl>
+                                    <i></i>
+                                    <dt><a href="#">大型医疗器械</a></dt>
+                                    <dd><a href="#">磁共振成像</a></dd>
+                                    <dd><a href="#">高频电刀</a></dd>
+                                    <dd><a href="#">脉搏波血压计</a></dd>
+                                    <dd><a href="#">X射线机</a></dd>
+                                </dl>
+                                <dl>
+                                    <i></i>
+                                    <dt><a href="#">新型医疗器械</a></dt>
+                                    <dd><a href="#">大脑探测仪</a></dd>
+                                    <dd><a href="#">AI治疗仪</a></dd>
+                                </dl>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- 二级菜单end -->
+                </div>
+                <!-- 导航菜单 end -->
+            </div>
+        </div>
+
+        <!--内容框-->
+        <div class="contentbox">
+
+            @RenderBody()
+
+            <!-- footer -->
+            <div class="footer content">
+                <div class="wid_main">
+                    <div class="footer_txt" style="text-align:center;">
+                        <p><span>泉州华中科技大学智能制造研究院 版权所有 2015-2020 闽ICP备15008028号</span></p>
+                        <p><span>福建省泉州市丰泽区北清东路518号数控一代创新中心10-13楼</span></p>
+                        <p><span>0595-28857088-303</span></p>
+                        <p><span>Powered by MetInfo 6.0.0</span></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="tempPage"></div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+<script>
+    new Vue({
+        el: "#top_bg",
+        mixins: [mixin],
+        data: function () {
+            return {
+                
+            }
+        },
+        methods: {
+
+
+        },
+        created: function () {
+            
+        }
+    })
+    console.log('hello?')
+
+</script>
+

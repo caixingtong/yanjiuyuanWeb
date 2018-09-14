@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SpriteFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CssFileName="images" ImageName="img" IsPhone="false" SpriteImgFileType="Png" xmlns="CssSprite">
+  <SpriteList>
+    <Sprite Path="xjt_l.png" LocationX="136" LocationY="64" />
+    <Sprite Path="xjt_r.png" LocationX="112" LocationY="64" />
+    <Sprite Path="more_grid.png" LocationX="160" LocationY="64" />
+    <Sprite Path="dh_07USER.png" LocationX="162" LocationY="0" />
+    <Sprite Path="foot_tel.png" LocationX="112" LocationY="120" />
+    <Sprite Path="dh_01HOME.png" LocationX="0" LocationY="0" />
+    <Sprite Path="dh_04GRID.png" LocationX="81" LocationY="0" />
+    <Sprite Path="dh_03TARGET.png" LocationX="54" LocationY="0" />
+    <Sprite Path="dh_02COMPASS.png" LocationX="27" LocationY="0" />
+    <Sprite Path="dh_05NOTEPAD.png" LocationX="108" LocationY="0" />
+    <Sprite Path="dh_06PEN.png" LocationX="135" LocationY="0" />
+    <Sprite Path="qweix.png" LocationX="0" LocationY="120" />
+    <Sprite Path="qweibo.png" LocationX="37" LocationY="120" />
+    <Sprite Path="qq.png" LocationX="74" LocationY="120" />
+    <Sprite Path="jt_right.png" LocationX="53" LocationY="63" />
+    <Sprite Path="jt_left.png" LocationX="0" LocationY="63" />
+  </SpriteList>
+</SpriteFile>

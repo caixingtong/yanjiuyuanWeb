@@ -1,0 +1,127 @@
+﻿@{
+    ViewBag.Title = "新闻资讯";
+}
+
+<!-- banner -->
+<div class="zy_banner">
+    <img src="../Content/images/web/zy_banner04.jpg">
+    <div class="zy_title">
+        <div>
+            <h1>关于我们</h1>
+            <span>company profile</span>
+        </div>
+    </div>
+</div>
+<!-- banner end -->
+<!-- 主体 -->
+<div class="zy_content" id="partPage">
+    <div class="wid_main">
+        <div class="zy_navbox">
+            <div class="weizhi">
+                <div>
+                    <p>
+                        <img src="../Content/images/web/PIN2.png">当前位置：<a href="index">首页</a> ><span>关于我们</span>
+                    </p>
+                </div>
+                <i></i>
+            </div>
+            <ul>
+                <li :class="{cur:urlParam.index == 1}" id="index1">
+                    <h2 v-on:click="changeIndex('1')"><a>图片新闻</a><i></i></h2>
+                </li>
+                <li :class="{cur:urlParam.index == 2}" id="index2">
+                    <h2 v-on:click="changeIndex('2')"><a>研究院新闻</a><i></i></h2>
+                </li>
+                <li :class="{cur:urlParam.index == 3}" id="index3">
+                    <h2 v-on:click="changeIndex('3')"><a>行业资讯</a><i></i></h2>
+                </li>
+                <li :class="{cur:urlParam.index == 4}" id="index4">
+                    <h2 v-on:click="changeIndex('4')"><a>技术百科</a><i></i></h2>
+                </li>
+                <li :class="{cur:urlParam.index == 5}" id="index5">
+                    <h2 v-on:click="changeIndex('5')"><a>通知公告</a><i></i></h2>
+                </li>
+            </ul>
+
+        </div>
+        <div class="zy_conbox zy_news">
+            <template v-show="urlParam.index == 1" id="content1">
+                <ul>
+                    <li>
+                        <img src="images/pic03.jpg">
+                        <dl>
+                            <dt><a href="news.html">英特尔发精准医疗解决方案，推进24小时精准医疗</a></dt>
+                            <dd>英特尔在上海发布其在中国精准医疗领域的解决方案建议书，内容涉及创新解决方案、合作案例、参考架构推荐等，并提出“24小时精准医疗”愿景英特尔在上海发布其在中国精准医疗领域的解决方案建议书...</dd>
+                        </dl>
+                        <span>
+                            <i>2018-03</i>
+                            <b>04</b>
+                        </span>
+                    </li>
+                    <li>
+                        <img src="images/pic02.jpg">
+                        <dl>
+                            <dt><a href="news.html">互联网医院热潮</a></dt>
+                            <dd>英特尔在上海发布其在中国精准医疗领域的解决方案建议书，内容涉及创新解决方案、合作案例、参考架构推荐等，并提出“24小时精准医疗”愿景</dd>
+                        </dl>
+                        <span>
+                            <i>2018-03</i>
+                            <b>04</b>
+                        </span>
+                    </li>
+                    <li>
+                        <img src="images/pic01.jpg">
+                        <dl>
+                            <dt><a href="news.html">梅奥诊所发明新式培养法，可使T细胞识别多种癌细胞</a></dt>
+                            <dd>英特尔在上海发布其在中国精准医疗领域的解决方案建议书，内容涉及创新解决方案、合作案例、参考架构推荐等，并提出“24小时精准医疗”愿景</dd>
+                        </dl>
+                        <span>
+                            <i>2018-02</i>
+                            <b>24</b>
+                        </span>
+                    </li>
+                </ul>
+                <div class="fanye">
+                    <a href="#">首 页</a>
+                    <a href="#">上一页</a>
+                    <span>
+                        <a href="#" class="current">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                    </span>
+                    <a href="#">下一页</a>
+                    <a href="#">尾 页</a>
+                </div>
+            </template>
+            
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    var demo = new Vue({
+        el: "#partPage",
+        mixins: [mixin],
+        data: function () {
+            return {
+
+            }
+        },
+        methods: {
+
+        },
+        created: function () {
+            this.indexLength = 4
+        }
+    })
+
+
+</script>
+
+<script type="text/javascript">
+
+
+</script>

@@ -1,0 +1,178 @@
+﻿@{
+    ViewBag.Title = "新闻资讯";
+}
+
+<!-- banner -->
+<div class="zy_banner">
+    <img src="../Content/images/web/zy_banner01.jpg">
+    <div class="zy_title">
+        <div>
+            <h1>关于我们</h1>
+            <span>company profile</span>
+        </div>
+    </div>
+</div>
+<!-- banner end -->
+<!-- 主体 -->
+<div class="zy_content" id="partPage">
+    <div class="wid_main">
+        <div class="zy_navbox">
+            <div class="weizhi">
+                <div>
+                    <p>
+                        <img src="../Content/images/web/PIN2.png">当前位置：<a href="index">首页</a> ><span>关于我们</span>
+                    </p>
+                </div>
+                <i></i>
+            </div>
+            <ul>
+                <li :class="{cur:urlParam.index == 1}" id="index1">
+                    <h2 v-on:click="changeIndex('1')"><a>公司简介</a><i></i></h2>
+                </li>
+                <li :class="{cur:urlParam.index == 2}" id="index2">
+                    <h2 v-on:click="changeIndex('2')">
+                        <a>发展历程</a>
+                        <i></i>
+                    </h2>
+
+                </li>
+                @*<li :class="{cur:urlParam.index == 3}" id="index3">
+                        <h2 v-on:click="changeIndex('3')">
+                            <a>企业文化</a>
+                            <i></i>
+                        </h2>
+                    </li>*@
+            </ul>
+
+        </div>
+        <div class="zy_conbox zy_about">
+            <div v-show="urlParam.index == 1" id="content1">
+                <img src="../Content/images/aboutpic.jpg">
+                <div class="txt">
+                    <p>
+                        泉州华中科技大学智能制造研究院（以下简称泉州研究院），是泉州市人民政府与华中科技大学合作共建，于2014年11月20日成立的事业单位，是以集聚国内外高校、科研院所和创新团队的科技创新资源，面向泉州市经济发展和“数控一代”机械产品升级创新工程以及“泉州制造2025”的需求，打造具有强大技术创新、成果转化和产业化的支撑与服务平台，以实现“政、产、学、研、用、金”有机融合、“无缝”对接，提升泉州制造业的综合竞争力，促进泉州产业转型升级。
+                    </p>
+                    <p>
+                        经过三年多的发展，研究院目前拥有一支118人的人才队伍，博士学位占20%, 硕士以上学位占45%，是省级院士工作站、省级工程技术研究中心，是福建省首批新型研发机构；近3000平米的研发场地和3000平米的产业基地已投入使用，具备了研发、制造、组装、调试、培训能力。截至目前，研究院在研项目30余项，其中4项为福建省重大科技专项，其余为市级项目；项目覆盖机械制造、石材瓷砖、食品饮料、纺织鞋服、水暖卫浴、工艺美术、大专院校等领域。研究院已完成的部分样机或生产线，目前已在嘉泰数控科技股份公司、泉州梅洋塑胶五金制品有限公司等20余家企业得到应用和试生产，应用企业实现经济效益超过2亿元。研究院积极致力于泉州当地的人才培养，与泉州信息工程学院、泉州轻工职业学院等十余所大中专院校开展了校企合作，共建“智能工业实训室”、“机器人公共实训基地”等人才培养实训平台，开展数控一代及智能制造技术培训，协助承办福建省职业院校技能大赛，累计培训学员650余人。截至目前，研究院申报并受理各种知识产权140项，其中发明专利35项、实用新型71项、软件著作权 34项；授权知识产权84项（其中发明5项、实用新型46项、软件著作权33项）。
+                    </p>
+                    <p>
+                        研究院组织团队先后参与编写了“泉州制造2025”行动计划纲要、泉州“数控一代”应用示范工程实施方案、泉州市机械设备产业转型升级路线图、数控一代典型案例集(泉州篇)、参与了2016年度泉州市 “中国制造2025”试点示范城市的申报工作、参与编写了泉州市千亩百亿3C产品产业链的建设规划等工作。同时配合泉州市或福建省，组织并参与智能制造推进制造业转型升级各类宣讲活动，为泉州实施“数控一代”应用示范工程和创建泉州市 “中国制造2025”试点示范城市等工作做出了重要贡献。
+                    </p>
+                </div>
+            </div>
+            <div v-show="urlParam.index == 2" id="content2">
+                <div class="main">
+                    <ul class="time-axis"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var demo = new Vue({
+        el: "#partPage",
+        mixins: [mixin],
+        data: function () {
+            return {
+                
+            }
+        },
+        methods: {
+            changeIndex(index) {
+                this.urlParam.index = index
+                $("#index1").removeClass("cur")
+                $("#index2").removeClass("cur")
+                //$("#index3").removeClass("cur")
+                $("#content1").hide()
+                $("#content2").hide()
+                //$("#content3").hide()
+                $("#index" + index).addClass("cur")
+                $("#content" + index).show()
+            }
+
+        },
+        created: function () {
+            if (!this.urlParam.index) this.urlParam.index = 1
+        }
+    })
+
+
+</script>
+
+<script type="text/javascript">
+    //这是要遍历时间轴的数据
+    var dimeAxis = [{
+            date: '2014年11月',
+            title: '研究院第一届理事会第一次会议召开，研究院正式成立',
+            achievement: ''
+        },
+        {
+            date: '2015年03月',
+            title: '研究院正式入驻泉州市丰泽区数控一代创新中心',
+            achievement: ''
+        },
+        {
+            date: '2015年08月',
+            title: '研究院产业化基地落成 ',
+            achievement: ''
+        },
+        {
+            date: '2016年06月',
+            title: '全国政协副主席、国家科技部部长万刚视察研究院产业基地',
+            achievement: ''
+        },
+        {
+            date: '2016年06月',
+            title: '省级院士工作站授牌',
+            achievement: ''
+        },
+        {
+            date: '2017年05月',
+            title: '研究院第一届理事会第二次会议召开',
+            achievement: ''
+        },
+        {
+            date: '2017年06月',
+            title: '被批准成为福建省首批新型研发机构',
+            achievement: ''
+        },
+        {
+            date: '2017年06月',
+            title: '与南安市政府合作设立“华中科大南安市高端装备研究所',
+            achievement: ''
+        },
+        {
+            date: '2017年06月',
+            title: '与泉州市模具工业协会成为战略合作伙伴',
+            achievement: ''
+        },
+        {
+            date: '2017年06月',
+            title: '成为石狮市智能产业技术创新战略联盟技术合作单位',
+            achievement: ''
+        },
+        {
+            date: '2017年06月',
+            title: '中国工程院周济院长一行院士专家团视察研究院硫化鞋生产线',
+            achievement: ''
+        },
+        {
+            date: '2017年08月',
+            title: '被批准成为福建省智能装备数字化工程研究中心',
+            achievement: ''
+        }];
+
+
+    $(function () {
+        $.each(dimeAxis, function (i, e) {
+            var html = '<li class="time-axis-item">' +
+                '<div class="time-axis-date">' + e.date + '<span></span></div>' +
+                '<div class="time-axis-title">' + e.title + '</div>' +
+                '<p class="time-axis-achievement">' + e.achievement + '</p>' +
+                '</li>';
+            $('.time-axis').append(html);
+        });
+    });
+</script>
