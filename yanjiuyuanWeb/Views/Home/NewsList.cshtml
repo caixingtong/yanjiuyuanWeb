@@ -7,8 +7,8 @@
     <img src="../Content/images/web/zy_banner04.jpg">
     <div class="zy_title">
         <div>
-            <h1>关于我们</h1>
-            <span>company profile</span>
+            <h1>新闻资讯</h1>
+            <span>NEWS CENTER</span>
         </div>
     </div>
 </div>
@@ -20,7 +20,7 @@
             <div class="weizhi">
                 <div>
                     <p>
-                        <img src="../Content/images/web/PIN2.png">当前位置：<a href="index">首页</a> ><span>关于我们</span>
+                        <img src="../Content/images/web/PIN2.png">当前位置：<a href="index">首页</a> ><span>新闻资讯</span>
                     </p>
                 </div>
                 <i></i>
@@ -45,12 +45,12 @@
 
         </div>
         <div class="zy_conbox zy_news">
-            <template v-show="urlParam.index == 1" id="content1">
+            <template>
                 <ul>
                     <li>
-                        <img src="images/pic03.jpg">
+                        <img src="../Content/images/pic03.jpg">
                         <dl>
-                            <dt><a href="news.html">英特尔发精准医疗解决方案，推进24小时精准医疗</a></dt>
+                            <dt><a href="news">英特尔发精准医疗解决方案，推进24小时精准医疗</a></dt>
                             <dd>英特尔在上海发布其在中国精准医疗领域的解决方案建议书，内容涉及创新解决方案、合作案例、参考架构推荐等，并提出“24小时精准医疗”愿景英特尔在上海发布其在中国精准医疗领域的解决方案建议书...</dd>
                         </dl>
                         <span>
@@ -59,9 +59,9 @@
                         </span>
                     </li>
                     <li>
-                        <img src="images/pic02.jpg">
+                        <img src="../Content/images/pic02.jpg">
                         <dl>
-                            <dt><a href="news.html">互联网医院热潮</a></dt>
+                            <dt><a href="news">互联网医院热潮</a></dt>
                             <dd>英特尔在上海发布其在中国精准医疗领域的解决方案建议书，内容涉及创新解决方案、合作案例、参考架构推荐等，并提出“24小时精准医疗”愿景</dd>
                         </dl>
                         <span>
@@ -70,9 +70,9 @@
                         </span>
                     </li>
                     <li>
-                        <img src="images/pic01.jpg">
+                        <img src="../Content/images/pic01.jpg">
                         <dl>
-                            <dt><a href="news.html">梅奥诊所发明新式培养法，可使T细胞识别多种癌细胞</a></dt>
+                            <dt><a href="news">梅奥诊所发明新式培养法，可使T细胞识别多种癌细胞</a></dt>
                             <dd>英特尔在上海发布其在中国精准医疗领域的解决方案建议书，内容涉及创新解决方案、合作案例、参考架构推荐等，并提出“24小时精准医疗”愿景</dd>
                         </dl>
                         <span>
@@ -81,17 +81,16 @@
                         </span>
                     </li>
                 </ul>
-                <div class="fanye">
-                    <a href="#">首 页</a>
-                    <a href="#">上一页</a>
-                    <span>
-                        <a href="#" class="current">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                    </span>
-                    <a href="#">下一页</a>
-                    <a href="#">尾 页</a>
+                <!--底部翻頁-->
+                <div style="text-align:right">
+                    <el-pagination v-on:size-change="handleSizeChange"
+                                   v-on:current-change="handleCurrentChange"
+                                   :current-page="currentPage"
+                                   :page-sizes="[1, 3, 5, 10]"
+                                   :page-size="5"
+                                   layout="total, sizes, prev, pager, next, jumper"
+                                   :total="totalRows">
+                    </el-pagination>
                 </div>
             </template>
             
@@ -107,14 +106,24 @@
         mixins: [mixin],
         data: function () {
             return {
-
+                currentPage: 1,
+                totalRows: 0,
+                pageSize: 6,
+                data: [],
+                tableData:[]
             }
         },
         methods: {
-
+            changeIndex(index) {
+                this.urlParam.index = index
+                for (var i = 1; i <= this.indexLength; i++) {
+                    $("#index" + i).removeClass("cur")
+                }
+                $("#index" + index).addClass("cur")
+            }
         },
         created: function () {
-            this.indexLength = 4
+            this.indexLength = 5
         }
     })
 

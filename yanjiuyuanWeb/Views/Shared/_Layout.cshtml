@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="~/Content/element.css" />
     <link rel="stylesheet" href="~/Content/index.css" type="text/css">
     <link rel="stylesheet" href="~/Content/children.css" type="text/css">
+    @*<script>
+        if (!document.location.host.indexof("hustqz") >= 0)
+                location.href = "http://www.hustqz.com"
+    </script>*@
     <script src="~/Scripts/jquery-1.11.0.min.js"></script>
     <script src="~/Scripts/jquery.SuperSlide.2.1.1.js"></script>
 
@@ -43,43 +47,43 @@
                 <!-- 导航 -->
                 <div class="dh_bg">
                     <ul>
-                        <li class="cur">
+                        <li :class="{cur:index==1}">
                             <a href="index">
                                 <i class="img dh_01HOME"></i>
                                 <span>网站首页</span>
                             </a>
                         </li>
-                        <li>
+                        <li :class="{cur:index==2}">
                             <a href="/Home/about">
                                 <i class="img dh_02COMPASS"></i>
                                 <span>关于我们</span>
                             </a>
                         </li>
-                        <li>
+                        <li :class="{cur:index==3}">
                             <a href="/Home/newslist">
                                 <i class="img dh_05NOTEPAD"></i>
                                 <span>新闻资讯</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="caselist.html">
+                        <li :class="{cur:index==4}">
+                            <a href="/Home/caselist">
                                 <i class="img dh_04GRID"></i>
                                 <span>案例展示</span>
                             </a>
                         </li>
-
-                        <li>
-                            <a href="message.html">
-                                <i class="img dh_06PEN"></i>
-                                <span>在线留言</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="contact.html">
+                        <li :class="{cur:index==5}">
+                            <a href="/Home/contact">
                                 <i class="img dh_07USER"></i>
                                 <span>联系我们</span>
                             </a>
                         </li>
+                        @*<li>
+                            <a href="message.html">
+                                <i class="img dh_06PEN"></i>
+                                <span>在线留言</span>
+                            </a>
+                        </li>*@
+
                     </ul>
                     <!-- 背景块 -->
                     <div class="dh_bg_cur">
@@ -136,30 +140,19 @@
                             <div>
                                 <dl>
                                     <i></i>
-                                    <dt><a href="productslist.html">微型医疗器械</a></dt>
-                                    <dd><a href="#">空心纤维透析器</a></dd>
-                                    <dd><a href="#">脉搏波血压计</a></dd>
-                                    <dd><a href="#">三高测量仪</a></dd>
+                                    <dt><a href="/Home/caselist?index=1">智慧工厂</a></dt>
                                 </dl>
                                 <dl>
                                     <i></i>
-                                    <dt><a href="#">家用医疗器械</a></dt>
-                                    <dd><a href="#">家用制氧机</a></dd>
-                                    <dd><a href="#">脉搏波血压计</a></dd>
+                                    <dt><a href="/Home/caselist?index=2">数控一代</a></dt>
                                 </dl>
                                 <dl>
                                     <i></i>
-                                    <dt><a href="#">大型医疗器械</a></dt>
-                                    <dd><a href="#">磁共振成像</a></dd>
-                                    <dd><a href="#">高频电刀</a></dd>
-                                    <dd><a href="#">脉搏波血压计</a></dd>
-                                    <dd><a href="#">X射线机</a></dd>
+                                    <dt><a href="/Home/caselist?index=3">机器人事业部</a></dt>
                                 </dl>
                                 <dl>
                                     <i></i>
-                                    <dt><a href="#">新型医疗器械</a></dt>
-                                    <dd><a href="#">大脑探测仪</a></dd>
-                                    <dd><a href="#">AI治疗仪</a></dd>
+                                    <dt><a href="/Home/caselist?index=4">综合案例</a></dt>
                                 </dl>
                             </div>
                         </div>
@@ -183,7 +176,6 @@
                         <p><span>泉州华中科技大学智能制造研究院 版权所有 2015-2020 闽ICP备15008028号</span></p>
                         <p><span>福建省泉州市丰泽区北清东路518号数控一代创新中心10-13楼</span></p>
                         <p><span>0595-28857088-303</span></p>
-                        <p><span>Powered by MetInfo 6.0.0</span></p>
                         <p></p>
                     </div>
                 </div>
@@ -197,20 +189,30 @@
 </html>
 
 <script>
-    new Vue({
+     let outDemo =  new Vue({
         el: "#top_bg",
         mixins: [mixin],
         data: function () {
             return {
-                
+                pathname: document.location.pathname,
             }
         },
         methods: {
 
 
         },
-        created: function () {
-            
+        computed: {
+            index: function () {
+                var pathname = document.location.pathname
+                if (pathname.indexOf('about') >= 0) return 2
+                else if (pathname.indexOf('news') >= 0) return 3
+                else if (pathname.indexOf('case') >= 0) return 4
+                else if (pathname.indexOf('contact') >= 0) return 5
+                else return 1
+            }
+        },
+         created: function () {
+             
         }
     })
     console.log('hello?')

@@ -1,0 +1,279 @@
+﻿@{
+    ViewBag.Title = "应用案例";
+}
+
+<!-- banner -->
+<div class="zy_banner">
+    <img src="../Content/images/web/zy_banner03.jpg">
+    <div class="zy_title">
+        <div>
+            <h1>案例展示</h1>
+            <span>case show</span>
+        </div>
+    </div>
+</div>
+<!-- banner end -->
+<!-- 主体 -->
+<div class="zy_content" id="partPage">
+    <div class="wid_main">
+        <div class="zy_navbox">
+            <div class="weizhi">
+                <div>
+                    <p>
+                        <img src="../Content/images/web/PIN2.png">当前位置：<a href="index">首页</a> ><span>案例展示</span>
+                    </p>
+                </div>
+                <i></i>
+            </div>
+            <ul>
+                <li :class="{cur:urlParam.index == 1}" id="index1">
+                    <h2 v-on:click="changeIndex('1')"><a>智慧工厂</a><i></i></h2>
+                </li>
+                <li :class="{cur:urlParam.index == 2}" id="index2">
+                    <h2 v-on:click="changeIndex('2')"><a>数控一代</a><i></i></h2>
+                </li>
+                <li :class="{cur:urlParam.index == 3}" id="index3">
+                    <h2 v-on:click="changeIndex('3')"><a>机器人事业部</a><i></i></h2>
+                </li>
+                <li :class="{cur:urlParam.index == 4}" id="index4">
+                    <h2 v-on:click="changeIndex('4')"><a>综合案例</a><i></i></h2>
+                </li>
+            </ul>
+
+        </div>
+        <div class="zy_conbox zy_anli">
+            <ul>
+                <li>
+                    <div class="sHoverItem">
+                        <img src="../Content/images/pic03.jpg">
+                        <div class="sIntro">
+                            <h2>高级医用轮椅</h2>
+                            <p>合作单位：贵阳市第一人民医院</p>
+                            <a href="caseDetail"><span>浏览</span></a>
+                        </div>
+                    </div>
+                    <h3><i></i><a href="caseDetail">高级医用轮椅</a></h3>
+                </li>
+                <li>
+                    <div class="sHoverItem">
+                        <img src="../Content/images/pic01.jpg">
+                        <div class="sIntro">
+                            <h2>磁共振成像设备</h2>
+                            <p>合作单位：贵阳市第一人民医院</p>
+                            <a href="caseDetail"><span>浏览</span></a>
+                        </div>
+                    </div>
+                    <h3><i></i><a href="caseDetail">磁共振成像设备</a></h3>
+                </li>
+                <li>
+                    <div class="sHoverItem">
+                        <img src="../Content/images/pic02.jpg">
+                        <div class="sIntro">
+                            <h2>医疗器械设备</h2>
+                            <p>合作单位：贵阳市第一人民医院</p>
+                            <a href="caseDetail"><span>浏览</span></a>
+                        </div>
+                    </div>
+                    <h3><i></i><a href="caseDetail">医疗器械设备</a></h3>
+                </li>
+                <li>
+                    <div class="sHoverItem">
+                        <img src="../Content/images/pic03.jpg">
+                        <div class="sIntro">
+                            <h2>高级医用轮椅</h2>
+                            <p>合作单位：贵阳市第一人民医院</p>
+                            <a href="caseDetail"><span>浏览</span></a>
+                        </div>
+                    </div>
+                    <h3><i></i><a href="caseDetail">高级医用轮椅</a></h3>
+                </li>
+                <li>
+                    <div class="sHoverItem">
+                        <img src="../Content/images/pic01.jpg">
+                        <div class="sIntro">
+                            <h2>磁共振成像设备</h2>
+                            <p>合作单位：贵阳市第一人民医院</p>
+                            <a href="caseDetail"><span>浏览</span></a>
+                        </div>
+                    </div>
+                    <h3><i></i><a href="caseDetail">磁共振成像设备</a></h3>
+                </li>
+                <li>
+                    <div class="sHoverItem">
+                        <img src="../Content/images/pic02.jpg">
+                        <div class="sIntro">
+                            <h2>医疗器械设备</h2>
+                            <p>合作单位：贵阳市第一人民医院</p>
+                            <a href="caseDetail"><span>浏览</span></a>
+                        </div>
+                    </div>
+                    <h3><i></i><a href="caseDetail">医疗器械设备</a></h3>
+                </li>
+                <li>
+                    <div class="sHoverItem">
+                        <img src="../Content/images/pic03.jpg">
+                        <div class="sIntro">
+                            <h2>高级医用轮椅</h2>
+                            <p>合作单位：贵阳市第一人民医院</p>
+                            <a href="caseDetail"><span>浏览</span></a>
+                        </div>
+                    </div>
+                    <h3><i></i><a href="caseDetail">高级医用轮椅</a></h3>
+                </li>
+                <li>
+                    <div class="sHoverItem">
+                        <img src="../Content/images/pic01.jpg">
+                        <div class="sIntro">
+                            <h2>磁共振成像设备</h2>
+                            <p>合作单位：贵阳市第一人民医院</p>
+                            <a href="caseDetail"><span>浏览</span></a>
+                        </div>
+                    </div>
+                    <h3><i></i><a href="caseDetail">磁共振成像设备</a></h3>
+                </li>
+                <li>
+                    <div class="sHoverItem">
+                        <img src="../Content/images/pic02.jpg">
+                        <div class="sIntro">
+                            <h2>医疗器械设备</h2>
+                            <p>合作单位：贵阳市第一人民医院</p>
+                            <a href="caseDetail"><span>浏览</span></a>
+                        </div>
+                    </div>
+                    <h3><i></i><a href="caseDetail">医疗器械设备</a></h3>
+                </li>
+                <li>
+                    <div class="sHoverItem">
+                        <img src="../Content/images/pic03.jpg">
+                        <div class="sIntro">
+                            <h2>高级医用轮椅</h2>
+                            <p>合作单位：贵阳市第一人民医院</p>
+                            <a href="caseDetail"><span>浏览</span></a>
+                        </div>
+                    </div>
+                    <h3><i></i><a href="caseDetail">高级医用轮椅</a></h3>
+                </li>
+                <li>
+                    <div class="sHoverItem">
+                        <img src="../Content/images/pic01.jpg">
+                        <div class="sIntro">
+                            <h2>磁共振成像设备</h2>
+                            <p>合作单位：贵阳市第一人民医院</p>
+                            <a href="caseDetail"><span>浏览</span></a>
+                        </div>
+                    </div>
+                    <h3><i></i><a href="#">磁共振成像设备</a></h3>
+                </li>
+                <li>
+                    <div class="sHoverItem">
+                        <img src="../Content/images/pic02.jpg">
+                        <div class="sIntro">
+                            <h2>医疗器械设备</h2>
+                            <p>合作单位：贵阳市第一人民医院</p>
+                            <a href="caseDetail"><span>浏览</span></a>
+                        </div>
+                    </div>
+                    <h3><i></i><a href="#">医疗器械设备</a></h3>
+                </li>
+                <li>
+                    <div class="sHoverItem">
+                        <img src="../Content/images/pic03.jpg">
+                        <div class="sIntro">
+                            <h2>高级医用轮椅</h2>
+                            <p>合作单位：贵阳市第一人民医院</p>
+                            <a href="caseDetail"><span>浏览</span></a>
+                        </div>
+                    </div>
+                    <h3><i></i><a href="#">高级医用轮椅</a></h3>
+                </li>
+                <li>
+                    <div class="sHoverItem">
+                        <img src="../Content/images/pic01.jpg">
+                        <div class="sIntro">
+                            <h2>磁共振成像设备</h2>
+                            <p>合作单位：贵阳市第一人民医院</p>
+                            <a href="caseDetail"><span>浏览</span></a>
+                        </div>
+                    </div>
+                    <h3><i></i><a href="#">磁共振成像设备</a></h3>
+                </li>
+                <li>
+                    <div class="sHoverItem">
+                        <img src="../Content/images/pic02.jpg">
+                        <div class="sIntro">
+                            <h2>医疗器械设备</h2>
+                            <p>合作单位：贵阳市第一人民医院</p>
+                            <a href="caseDetail"><span>浏览</span></a>
+                        </div>
+                    </div>
+                    <h3><i></i><a href="#">医疗器械设备</a></h3>
+                </li>
+                <li>
+                    <div class="sHoverItem">
+                        <img src="../Content/images/pic01.jpg">
+                        <div class="sIntro">
+                            <h2>磁共振成像设备</h2>
+                            <p>合作单位：贵阳市第一人民医院</p>
+                            <a href="caseDetail"><span>浏览</span></a>
+                        </div>
+                    </div>
+                    <h3><i></i><a href="#">磁共振成像设备</a></h3>
+                </li>
+            </ul>
+
+        </div>
+        <!--底部翻頁-->
+        <div style="text-align:right;margin-bottom:20px;">
+            <el-pagination v-on:size-change="handleSizeChange"
+                           v-on:current-change="handleCurrentChange"
+                           :current-page="currentPage"
+                           :page-sizes="[1, 3, 5, 10]"
+                           :page-size="5"
+                           layout="total, sizes, prev, pager, next, jumper"
+                           :total="totalRows">
+            </el-pagination>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var demo = new Vue({
+        el: "#partPage",
+        mixins: [mixin],
+        data: function () {
+            return {
+                currentPage: 1,
+                totalRows: 0,
+                pageSize: 6,
+                data: [],
+                tableData: []
+            }
+        },
+        methods: {
+            changeIndex(index) {
+                this.urlParam.index = index
+                for (var i = 1; i <= this.indexLength; i++) {
+                    $("#index" + i).removeClass("cur")
+                }
+                $("#index" + index).addClass("cur")
+            }
+        },
+        created: function () {
+            this.indexLength = 4
+        }
+    })
+
+
+</script>
+
+<script>
+    window.onload = function () {
+        var a = new sHover("sHoverItem", "sIntro");
+        a.set({
+            slideSpeed: 6,
+            opacityChange: true,
+            opacity: 80
+        });
+    }
+</script>

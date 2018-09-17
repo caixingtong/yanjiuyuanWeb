@@ -12,23 +12,28 @@ namespace yanjiuyuanWeb.Controllers
         {
             return View();
         }
-
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
-        public ActionResult News()
-        {
-            return View();
-        }
-
         public ActionResult NewsList()
         {
             return View();
         }
-
+        public ActionResult News()
+        {
+            return View();
+        }
+        public ActionResult caseList()
+        {
+            return View();
+        }
+        public ActionResult caseDetail()
+        {
+            return View();
+        }
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

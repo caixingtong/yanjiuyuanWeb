@@ -176,6 +176,7 @@ var mixin = {
 
     },
     methods: {
+        //获取url参数
         getUrlParam() {
             var searchStr = window.location.search
             if (searchStr.length < 1) {
@@ -191,13 +192,27 @@ var mixin = {
         },
         changeIndex(index) {
             this.urlParam.index = index
-            for (var i = 0; i < indexLength; i++) {
+            for (var i = 1; i <= this.indexLength; i++) {
                 $("#index" + i).removeClass("cur")
                 $("#content" + i).hide()
             }
             $("#index" + index).addClass("cur")
             $("#content" + index).show()
-        }
+        },
+        //翻頁相關事件
+        getData() {
+            var start = this.pageSize * (this.currentPage - 1)
+            this.tableData = this.data.slice(start, start + this.pageSize)
+        },
+        handleSizeChange: function (val) {
+            this.currentPage = 1
+            this.pageSize = val
+            this.getData()
+        },
+        handleCurrentChange: function (val) {
+            this.currentPage = val
+            this.getData()
+        },
      
     }
 }
