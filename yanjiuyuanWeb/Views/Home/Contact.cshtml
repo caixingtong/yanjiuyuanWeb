@@ -57,10 +57,10 @@
             <div v-show="urlParam.index == 2" id="content2">
                 <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
                     <el-form-item label="姓名" prop="name">
-                        <el-input v-model="ruleForm.name"></el-input>
+                        <el-input v-model="ruleForm.name" style="width:200px;"></el-input>
                     </el-form-item>
                     <el-form-item label="联系方式">
-                        <el-input v-model="ruleForm.contact"></el-input>
+                        <el-input v-model="ruleForm.contact" style="width:400px;"></el-input>
                     </el-form-item>
                     <el-form-item label="留言内容" prop="content">
                         <el-input type="textarea" v-model="ruleForm.content"></el-input>
@@ -88,10 +88,32 @@
                     contact: '',
                     content: ''
                 },
+                rules: {
+                    name: [
+                        { required: true, message: '请输入姓名', trigger: 'blur' }
+                    ],
+                    content: [
+                        { required: true, message: '请输入留言', trigger: 'blur' },
+                        { min: 3, max: 200, message: '长度在 3 到 200 个字符', trigger: 'blur' }
+                    ]
+                }
             }
         },
         methods: {
-
+            submitForm(formName) {
+                var that = this
+                this.$refs[formName].validate((valid) => {
+                    if (valid) {
+                       
+                    } else {
+                        that.elementAlert('提示信息!', '提交数据有误')
+                        return false;
+                    }
+                });
+            },
+            resetForm(formName) {
+                this.$refs[formName].resetFields();
+            }
         },
         created: function () {
             this.indexLength = 2
