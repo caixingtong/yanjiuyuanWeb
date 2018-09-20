@@ -12,7 +12,6 @@ namespace yanjiuyuanWeb.Controllers
         {
             return View();
         }
-
         
     }
 }
