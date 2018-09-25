@@ -252,6 +252,7 @@ namespace yanjiuyuanWeb
                     // "apiKeyIn" can either be "query" or "header"
                     //
                     //c.EnableApiKeySupport("apiKey", "header");
+
                 });
         }
 
