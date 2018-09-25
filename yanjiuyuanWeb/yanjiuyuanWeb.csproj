@@ -290,6 +290,9 @@
     <Content Include="Views\Home\NewsList.cshtml" />
     <Content Include="Views\Home\caseList.cshtml" />
     <Content Include="Views\Home\caseDetail.cshtml" />
+    <Content Include="Views\Home\TeamPower.cshtml" />
+    <Content Include="Views\Home\PartyCreate.cshtml" />
+    <Content Include="Views\Home\Notify.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

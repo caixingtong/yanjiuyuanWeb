@@ -4,10 +4,10 @@
 
 <!-- banner -->
 <div class="zy_banner">
-    <img src="../Content/images/web/zy_banner04.jpg">
+    <img src="../Content/images/web/zy_banner01.jpg">
     <div class="zy_title">
         <div>
-            <h1>新闻资讯</h1>
+            <h1>新闻中心</h1>
             <span>NEWS CENTER</span>
         </div>
     </div>
@@ -20,26 +20,23 @@
             <div class="weizhi">
                 <div>
                     <p>
-                        <img src="../Content/images/web/PIN2.png">当前位置：<a href="index">首页</a> ><span>新闻资讯</span>
+                        <img src="../Content/images/web/PIN2.png">当前位置：<a href="index">首页</a> ><span>新闻中心</span>
                     </p>
                 </div>
                 <i></i>
             </div>
             <ul>
                 <li :class="{cur:urlParam.index == 1}" id="index1">
-                    <h2 v-on:click="changeIndex('1')"><a>图片新闻</a><i></i></h2>
+                    <h2 v-on:click="changeIndex('1')"><a>研究院新闻</a><i></i></h2>
                 </li>
                 <li :class="{cur:urlParam.index == 2}" id="index2">
-                    <h2 v-on:click="changeIndex('2')"><a>研究院新闻</a><i></i></h2>
+                    <h2 v-on:click="changeIndex('2')"><a>视频短片</a><i></i></h2>
                 </li>
                 <li :class="{cur:urlParam.index == 3}" id="index3">
-                    <h2 v-on:click="changeIndex('3')"><a>行业资讯</a><i></i></h2>
+                    <h2 v-on:click="changeIndex('3')"><a>媒体聚焦</a><i></i></h2>
                 </li>
                 <li :class="{cur:urlParam.index == 4}" id="index4">
-                    <h2 v-on:click="changeIndex('4')"><a>技术百科</a><i></i></h2>
-                </li>
-                <li :class="{cur:urlParam.index == 5}" id="index5">
-                    <h2 v-on:click="changeIndex('5')"><a>通知公告</a><i></i></h2>
+                    <h2 v-on:click="changeIndex('4')"><a>行业信息</a><i></i></h2>
                 </li>
             </ul>
 
@@ -101,7 +98,7 @@
             }
         },
         created: function () {
-            this.indexLength = 5
+            this.indexLength = 4
         }
     })
 

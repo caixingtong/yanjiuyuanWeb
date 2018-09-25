@@ -8,7 +8,7 @@
     <div class="zy_title">
         <div>
             <h1>关于我们</h1>
-            <span>company profile</span>
+            <span>about us</span>
         </div>
     </div>
 </div>
@@ -27,21 +27,20 @@
             </div>
             <ul>
                 <li :class="{cur:urlParam.index == 1}" id="index1">
-                    <h2 v-on:click="changeIndex('1')"><a>公司简介</a><i></i></h2>
+                    <h2 v-on:click="changeIndex('1')"><a>研究院简介</a><i></i></h2>
                 </li>
                 <li :class="{cur:urlParam.index == 2}" id="index2">
-                    <h2 v-on:click="changeIndex('2')">
-                        <a>发展历程</a>
-                        <i></i>
-                    </h2>
-
+                    <h2 v-on:click="changeIndex('2')"><a>组织机构</a><i></i></h2>
                 </li>
-                @*<li :class="{cur:urlParam.index == 3}" id="index3">
-                    <h2 v-on:click="changeIndex('3')">
-                        <a>企业文化</a>
-                        <i></i>
-                    </h2>
-                </li>*@
+                <li :class="{cur:urlParam.index == 3}" id="index3">
+                    <h2 v-on:click="changeIndex('3')"><a>发展历程</a><i></i></h2>
+                </li>
+                <li :class="{cur:urlParam.index == 4}" id="index4">
+                    <h2 v-on:click="changeIndex('4')"><a>各部门简介</a><i></i></h2>
+                </li>
+                <li :class="{cur:urlParam.index == 5}" id="index5">
+                    <h2 v-on:click="changeIndex('5')"><a>联系我们</a><i></i></h2>
+                </li>
             </ul>
 
         </div>
@@ -61,9 +60,18 @@
                 </div>
             </div>
             <div v-show="urlParam.index == 2" id="content2">
+                <p>组织机构</p>
+            </div>
+            <div v-show="urlParam.index == 3" id="content3">
                 <div class="main">
                     <ul class="time-axis"></ul>
                 </div>
+            </div>
+            <div v-show="urlParam.index == 4" id="content4">
+                <p>各部门简介</p>
+            </div>
+            <div v-show="urlParam.index == 5" id="content5">
+                <p>联系我们</p>
             </div>
         </div>
     </div>
@@ -83,7 +91,7 @@
 
         },
         created: function () {
-            this.indexLength = 2
+            this.indexLength = 5
             
         }
     })

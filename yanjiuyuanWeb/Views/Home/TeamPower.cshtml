@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "关于我们";
+}
+
+<!-- banner -->
+<div class="zy_banner">
+    <img src="../Content/images/web/zy_banner01.jpg">
+    <div class="zy_title">
+        <div>
+            <h1>人才创新</h1>
+            <span> talent innovation </span>
+        </div>
+    </div>
+</div>
+<!-- banner end -->
+<!-- 主体 -->
+<div class="zy_content" id="partPage">
+    <div class="wid_main">
+        <div class="zy_navbox">
+            <div class="weizhi">
+                <div>
+                    <p>
+                        <img src="../Content/images/web/PIN2.png">当前位置：<a href="index">首页</a> ><span>人才创新</span>
+                    </p>
+                </div>
+                <i></i>
+            </div>
+            <ul>
+                <li :class="{cur:urlParam.index == 1}" id="index1">
+                    <h2 v-on:click="changeIndex('1')"><a>院士工作站</a><i></i></h2>
+                </li>
+                <li :class="{cur:urlParam.index == 2}" id="index2">
+                    <h2 v-on:click="changeIndex('2')"><a>科研团队</a><i></i></h2>
+                </li>
+                <li :class="{cur:urlParam.index == 3}" id="index2">
+                    <h2 v-on:click="changeIndex('3')"><a>知识产权</a><i></i></h2>
+                </li>
+            </ul>
+
+        </div>
+        <div class="zy_conbox zy_about">
+            <div v-show="urlParam.index == 1" id="content1">
+                <p>院士工作站</p>
+            </div>
+            <div v-show="urlParam.index == 2" id="content2">
+                <p>科研团队</p>
+            </div>
+            <div v-show="urlParam.index == 3" id="content3">
+                <p>知识产权</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var demo = new Vue({
+        el: "#partPage",
+        mixins: [mixin],
+        data: function () {
+            return {
+
+            }
+        },
+        methods: {
+
+        },
+        created: function () {
+            this.indexLength = 3
+
+        }
+    })
+
+
+</script>
+
