@@ -212,6 +212,7 @@
     <Content Include="Content\children.css" />
     <Content Include="Content\element.css" />
     <Content Include="Content\images\aboutpic.jpg" />
+    <Content Include="Content\images\address.jpg" />
     <Content Include="Content\images\banner01.jpg" />
     <Content Include="Content\images\banner02.jpg" />
     <Content Include="Content\images\bg01_yuan.png" />
@@ -359,7 +360,11 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Home\NewsList.cshtml" />
-    <Content Include="SwaggerUI\lib\.DS_Store" />
+    <Content Include="Views\Home\caseList.cshtml" />
+    <Content Include="Views\Home\caseDetail.cshtml" />
+    <Content Include="Views\Home\TeamPower.cshtml" />
+    <Content Include="Views\Home\PartyCreate.cshtml" />
+    <Content Include="Views\Home\Notify.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,17 +1,129 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "联系我们";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<!-- banner -->
+<div class="zy_banner">
+    <img src="../Content/images/web/zy_banner01.jpg">
+    <div class="zy_title">
+        <div>
+            <h1>联系我们</h1>
+            <span>company profile</span>
+        </div>
+    </div>
+</div>
+<!-- banner end -->
+<!-- 主体 -->
+<div class="zy_content" id="partPage">
+    <div class="wid_main">
+        <div class="zy_navbox">
+            <div class="weizhi">
+                <div>
+                    <p>
+                        <img src="../Content/images/web/PIN2.png">当前位置：<a href="index">首页</a> ><span>联系我们</span>
+                    </p>
+                </div>
+                <i></i>
+            </div>
+            <ul>
+                <li :class="{cur:urlParam.index == 1}" id="index1">
+                    <h2 v-on:click="changeIndex('1')"><a>联系方式</a><i></i></h2>
+                </li>
+                <li :class="{cur:urlParam.index == 2}" id="index2">
+                    <h2 v-on:click="changeIndex('2')">
+                        <a>在线留言</a>
+                        <i></i>
+                    </h2>
+                </li>
+            </ul>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+        </div>
+        <div class="zy_conbox zy_about">
+            <div v-show="urlParam.index == 1" id="content1">
+                <img src="../Content/images/address.jpg" style="width:58%;">
+                <div class="txt">
+                    <p>
+                        电话: 010-88888888
+                    </p>
+                    <p>
+                        邮箱: 888888@qq.com
+                    </p>
+                    <p>
+                        地址: 福建省泉州市丰泽区北清东路518号数控一代创新中心10-13楼
+                    </p>
+
+                </div>
+            </div>
+            <div v-show="urlParam.index == 2" id="content2">
+                <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+                    <el-form-item label="姓名" prop="name">
+                        <el-input v-model="ruleForm.name" style="width:200px;"></el-input>
+                    </el-form-item>
+                    <el-form-item label="联系方式">
+                        <el-input v-model="ruleForm.contact" style="width:400px;"></el-input>
+                    </el-form-item>
+                    <el-form-item label="留言内容" prop="content">
+                        <el-input type="textarea" v-model="ruleForm.content"></el-input>
+                    </el-form-item>
+                    <el-form-item>
+                        <el-button type="primary" v-on:click="submitForm('ruleForm')" :disabled="disabled">提交</el-button>
+                        <el-button v-on:click="resetForm('ruleForm')">重置</el-button>
+                    </el-form-item>
+                </el-form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var demo = new Vue({
+        el: "#partPage",
+        mixins: [mixin],
+        data: function () {
+            return {
+                disabled: false,
+                ruleForm: {
+                    name: '',
+                    contact: '',
+                    content: ''
+                },
+                rules: {
+                    name: [
+                        { required: true, message: '请输入姓名', trigger: 'blur' }
+                    ],
+                    content: [
+                        { required: true, message: '请输入留言', trigger: 'blur' },
+                        { min: 3, max: 200, message: '长度在 3 到 200 个字符', trigger: 'blur' }
+                    ]
+                }
+            }
+        },
+        methods: {
+            submitForm(formName) {
+                var that = this
+                this.$refs[formName].validate((valid) => {
+                    if (valid) {
+                       
+                    } else {
+                        that.elementAlert('提示信息!', '提交数据有误')
+                        return false;
+                    }
+                });
+            },
+            resetForm(formName) {
+                this.$refs[formName].resetFields();
+            }
+        },
+        created: function () {
+            this.indexLength = 2
+
+        }
+    })
+
+
+</script>
+
+<script type="text/javascript">
+
+</script>

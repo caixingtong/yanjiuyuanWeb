@@ -192,7 +192,7 @@ var mixin = {
         },
         changeIndex(index) {
             this.urlParam.index = index
-            for (var i = 0; i < indexLength; i++) {
+            for (var i = 1; i <= this.indexLength; i++) {
                 $("#index" + i).removeClass("cur")
                 $("#content" + i).hide()
             }
@@ -213,6 +213,12 @@ var mixin = {
             this.currentPage = val
             this.getData()
         },
-     
+        //element彈窗
+        elementAlert(title, text) {
+            var that = this
+            that.$alert(text, title, {
+                confirmButtonText: '确定'
+            });
+        },
     }
 }
