@@ -27,9 +27,9 @@
             </div>
             <ul>
                 <li :class="{cur:urlParam.index == 1}" id="index1">
-                    <h2 v-on:click="changeIndex('1')"><a>智慧工厂</a><i></i></h2>
+                    <h2 v-on:click="changeIndex('1')"><a>综合案例</a><i></i></h2>
                 </li>
-                <li :class="{cur:urlParam.index == 2}" id="index2">
+                @*<li :class="{cur:urlParam.index == 2}" id="index2">
                     <h2 v-on:click="changeIndex('2')"><a>数控一代</a><i></i></h2>
                 </li>
                 <li :class="{cur:urlParam.index == 3}" id="index3">
@@ -37,7 +37,7 @@
                 </li>
                 <li :class="{cur:urlParam.index == 4}" id="index4">
                     <h2 v-on:click="changeIndex('4')"><a>综合案例</a><i></i></h2>
-                </li>
+                </li>*@
             </ul>
 
         </div>
@@ -95,7 +95,7 @@
             }
         },
         created: function () {
-            this.indexLength = 4
+            this.indexLength = 1
         }
     })
 

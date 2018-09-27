@@ -742,3 +742,12 @@ li{ list-style-type:none;}
     width /**/: 101px;
     height /**/: 101px;
 }
+
+
+.img-center {
+    display: block !important;
+    margin: 0 auto !important;
+    float: none !important;
+    width: auto !important;
+    height: auto !important;
+}

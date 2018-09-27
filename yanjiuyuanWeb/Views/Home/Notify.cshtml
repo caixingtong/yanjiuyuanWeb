@@ -32,7 +32,7 @@
                 <li :class="{cur:urlParam.index == 2}" id="index2">
                     <h2 v-on:click="changeIndex('2')"><a>资料下载</a><i></i></h2>
                 </li>
-                <li :class="{cur:urlParam.index == 3}" id="index2">
+                <li :class="{cur:urlParam.index == 3}" id="index3">
                     <h2 v-on:click="changeIndex('3')"><a>人才招聘</a><i></i></h2>
                 </li>
             </ul>
@@ -46,7 +46,12 @@
                 <p>资料下载</p>
             </div>
             <div v-show="urlParam.index == 3" id="content3">
-                <p>人才招聘</p>
+                <el-table :data="tableData"
+                          stripe
+                          style="width: 100%">
+                    <el-table-column v-for="p in tableProp" :prop="p.prop" :label="p.label">
+                    </el-table-column>
+                </el-table>
             </div>
         </div>
     </div>
@@ -59,7 +64,58 @@
         mixins: [mixin],
         data: function () {
             return {
-
+                tableProp: [
+                    {
+                        prop: 'name',
+                        label: '职位名称'
+                    },
+                    {
+                        prop: 'require',
+                        label: '要求'
+                    },
+                    {
+                        prop: 'address',
+                        label: '工作地点'
+                    },
+                    {
+                        prop: 'salary',
+                        label: '薪资'
+                    },
+                    {
+                        prop: 'date',
+                        label: '发布日期'
+                    }
+                ],
+                tableData: [
+                     {
+                        name: '销售经理（教学市场）',
+                        require: '本科 | 招5人',
+                        address: '泉州',
+                        salary: '3-6千/月',
+                        date: '2018-10-24'
+                    },
+                    {
+                        name: '网页前端工程师',
+                        require: '本科 | 招1人',
+                        address: '泉州',
+                        salary: '5.5-6千/月',
+                        date: '2018-10-24'
+                    },
+                    {
+                        name: '嵌入式系统工程师（数控一代事业部）',
+                        require: '3-4年经验 | 本科 | 招1人',
+                        address: '泉州',
+                        salary: '7-9千/月',
+                        date: '2018-10-24'
+                    },
+                    {
+                        name: '机器人运动控制算法工程师',
+                        require: '招1人',
+                        address: '泉州',
+                        salary: '4.5-6千/月',
+                        date: '2018-10-24'
+                    }
+                ]
             }
         },
         methods: {

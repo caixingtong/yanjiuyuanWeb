@@ -219,6 +219,9 @@
     <Content Include="Content\images\bg02.png" />
     <Content Include="Content\images\bg03.png" />
     <Content Include="Content\images\bg_yuan.png" />
+    <Content Include="Content\images\department1.jpg" />
+    <Content Include="Content\images\department2.jpg" />
+    <Content Include="Content\images\department3.jpg" />
     <Content Include="Content\images\dh_01HOME.png" />
     <Content Include="Content\images\dh_02COMPASS.png" />
     <Content Include="Content\images\dh_03TARGET.png" />
@@ -238,6 +241,7 @@
     <Content Include="Content\images\more_grid.png" />
     <Content Include="Content\images\mov_bbb.mp4" />
     <Content Include="Content\images\nav_cur.png" />
+    <Content Include="Content\images\organization.png" />
     <Content Include="Content\images\pic01.jpg" />
     <Content Include="Content\images\pic02.jpg" />
     <Content Include="Content\images\pic03.jpg" />
