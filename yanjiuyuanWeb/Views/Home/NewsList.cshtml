@@ -47,7 +47,7 @@
         <div class="zy_conbox zy_news">
             <template>
                 <ul>
-                    <li v-for="d in data" v-on:click="openUrl(url)">
+                    <li v-for="d in data" v-on:click="openUrl(d.Content)">
                         <img :src="d.ImageUrl">
                         <dl>
                             <dt><a>{{d.Title}}</a></dt>
@@ -121,7 +121,7 @@
                 },param)
             },
             openUrl(url) {
-                window.open('/html/20189211494.html')
+                window.open(url)
             }
         },
         created: function () {
