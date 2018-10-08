@@ -9,6 +9,7 @@ using yanjiuyuanWeb.Models;
 
 namespace yanjiuyuanWeb.Controllers
 {
+
     /// <summary>
     /// 新闻与应用案例管理
     /// </summary>
@@ -62,7 +63,7 @@ namespace yanjiuyuanWeb.Controllers
                      expression, n => n.Id);
                 foreach (var item in newsAndCases)
                 {
-                    item.Content = "";
+                    item.Contents = "";
                 }
                 return new NewErrorModel()
                 {

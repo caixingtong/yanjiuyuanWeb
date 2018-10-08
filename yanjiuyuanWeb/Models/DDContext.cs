@@ -50,7 +50,7 @@ namespace yanjiuyuanWeb.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<NewsAndCases>()
-                .Property(e => e.Content)
+                .Property(e => e.Contents)
                 .IsUnicode(false);
 
             modelBuilder.Entity<NewsAndCases>()
