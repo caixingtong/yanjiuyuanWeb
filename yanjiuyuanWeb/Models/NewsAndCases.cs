@@ -21,7 +21,9 @@ namespace yanjiuyuanWeb.Models
         [StringLength(300)]
         public string Title { get; set; }
 
-        public string Content { get; set; }
+        [StringLength(300)]
+
+        public string Contents { get; set; }
 
         [StringLength(100)]
         public string CreateTime { get; set; }

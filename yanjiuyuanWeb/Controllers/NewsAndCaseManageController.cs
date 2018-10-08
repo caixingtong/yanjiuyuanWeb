@@ -62,7 +62,7 @@ namespace yanjiuyuanWeb.Controllers
                      expression, n => n.Id);
                 foreach (var item in newsAndCases)
                 {
-                    item.Content = "";
+                    item.Contents = "";
                 }
                 return new NewErrorModel()
                 {
