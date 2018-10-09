@@ -62,10 +62,6 @@ namespace yanjiuyuanWeb.Controllers
                 expression = n => n.BigType == bigType && n.Type == type;
                 List<NewsAndCases> newsAndCases = eFHelper.GetPagedList(pageIndex, pageSize,
                      expression, n => n.Id);
-                foreach (var item in newsAndCases)
-                {
-                    item.Contents = "";
-                }
                 return new NewErrorModel()
                 {
                     data = newsAndCases,
