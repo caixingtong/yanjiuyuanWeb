@@ -12,40 +12,26 @@ namespace yanjiuyuanWeb.Controllers
         {
             return View();
         }
+
+
         public ActionResult About()
         {
-            return View();
-        }
-        public ActionResult NewsList()
-        {
+            ViewBag.Message = "Your application description page.";
             return View();
         }
         public ActionResult News()
         {
             return View();
         }
-        public ActionResult TeamPower()
+
+        public ActionResult NewsList()
         {
             return View();
         }
-        public ActionResult caseList()
-        {
-            return View();
-        }
-        public ActionResult caseDetail()
-        {
-            return View();
-        }
-        public ActionResult PartyCreate()
-        {
-            return View();
-        }
-        public ActionResult Notify()
-        {
-            return View();
-        }
+
         public ActionResult Contact()
         {
+            ViewBag.Message = "Your contact page.";
             return View();
         }
     }
