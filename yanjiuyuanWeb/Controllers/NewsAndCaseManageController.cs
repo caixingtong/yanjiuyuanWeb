@@ -59,7 +59,6 @@ namespace yanjiuyuanWeb.Controllers
             {
 
                 EFHelper<NewsAndCases> eFHelper = new EFHelper<NewsAndCases>();
-
                 System.Linq.Expressions.Expression<Func<NewsAndCases, bool>> expression = null;
                 expression = n => n.BigType == bigType && n.Type == type;
                 List<NewsAndCases> NewsAndCasesListAll = eFHelper.GetListBy(expression);
