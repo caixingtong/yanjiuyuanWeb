@@ -22,7 +22,6 @@ namespace yanjiuyuanWeb.Models
         public string Title { get; set; }
 
         [StringLength(300)]
-
         public string Contents { get; set; }
 
         [StringLength(100)]

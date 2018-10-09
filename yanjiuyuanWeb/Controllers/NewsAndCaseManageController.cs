@@ -57,13 +57,17 @@ namespace yanjiuyuanWeb.Controllers
         {
             try
             {
+
                 EFHelper<NewsAndCases> eFHelper = new EFHelper<NewsAndCases>();
+
                 System.Linq.Expressions.Expression<Func<NewsAndCases, bool>> expression = null;
                 expression = n => n.BigType == bigType && n.Type == type;
+                List<NewsAndCases> NewsAndCasesListAll = eFHelper.GetListBy(expression);
                 List<NewsAndCases> newsAndCases = eFHelper.GetPagedList(pageIndex, pageSize,
                      expression, n => n.Id);
                 return new NewErrorModel()
                 {
+                    count = NewsAndCasesListAll.Count,
                     data = newsAndCases,
                     error = new Error(0, "读取成功！", "") { },
                 };
